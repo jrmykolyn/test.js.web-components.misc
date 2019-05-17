@@ -1,6 +1,23 @@
 ((window, COMPONENTS) => {
   const template = document.createElement('template');
 
+  const DEFAULT = {
+    'button': {
+      'color': 'red',
+    },
+  };
+
+  const THEMED = {
+    ':host(.themed) button': {
+      'color': 'blue',
+    },
+  };
+
+  const STYLES = {
+    ...DEFAULT,
+    ...THEMED,
+  };
+
   const toRules = (data) => {
     return Object.keys(data)
       .map((k) => `${k} { ${toDeclarations(data[k])} }`)
@@ -14,7 +31,9 @@
   };
 
   template.innerHTML = `
-    <style></style>
+    <style>
+      ${toRules(STYLES)}
+    </style>
     <slot name="content">
       <button>
         <slot name="inner">
