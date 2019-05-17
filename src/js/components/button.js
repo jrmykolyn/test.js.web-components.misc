@@ -31,9 +31,11 @@
   };
 
   template.innerHTML = `
-    <style>
-      ${toRules(STYLES)}
-    </style>
+    <slot name="styles">
+      <style>
+        ${toRules(STYLES)}
+      </style>
+    </slot>
     <slot name="content">
       <button>
         <slot name="inner">
