@@ -39,7 +39,9 @@
     <slot name="content">
       <button>
         <slot name="inner">
-          My Button
+          <span>
+            My Button
+          </span>
         </slot>
       </button>
     </slot>
