@@ -1,6 +1,18 @@
 ((window, COMPONENTS) => {
   const template = document.createElement('template');
 
+  const toRules = (data) => {
+    return Object.keys(data)
+      .map((k) => `${k} { ${toDeclarations(data[k])} }`)
+      .join('\n\n');
+  };
+
+  const toDeclarations = (data) => {
+    return Object.keys(data)
+      .map((k) => `${k}: ${data[k]};`)
+      .join('\n');
+  };
+
   template.innerHTML = `
     <style></style>
     <slot name="content">
