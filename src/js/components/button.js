@@ -53,10 +53,43 @@
 
       this.root = this.attachShadow({ mode: 'open' });
       this.root.appendChild(template.content.cloneNode(true));
+      this.slots = this.getSlots();
     }
 
     connectedCallback() {
-      console.log('__ `Button#connectedCallback()`');
+      this.render();
+    }
+
+    getSlots() {
+      return [...this.root.querySelectorAll('slot') || []]
+        .reduce((acc, node) => {
+          return {
+            ...acc,
+            [node.getAttribute('name')]: node,
+          };
+        }, {});
+    }
+
+    hasSlotContent(name) {
+      return [...this.children].some((node) => node.getAttribute('slot') === name);
+    }
+
+    render() {
+      // Render 'content'.
+      if (!this.hasSlotContent('content')) {
+        const buttonElem = document.createElement('button');
+        buttonElem.appendChild(this.slots.inner);
+        this.slots.content.innerHTML = '';
+        this.slots.content.appendChild(buttonElem);
+      }
+
+      // Render 'inner'.
+      if (!this.hasSlotContent('inner')) {
+        const spanElem = document.createElement('span');
+        spanElem.innerText = 'My Button';
+        this.slots.inner.innerHTML = '';
+        this.slots.inner.appendChild(spanElem);
+      }
     }
   }
 })(window, (window.__COMPONENTS__ = window.__COMPONENTS__ || {}));
