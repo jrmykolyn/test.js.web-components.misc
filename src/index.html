@@ -4,29 +4,32 @@
     <title>Test - JS - Web Components - Styles</title>
   </head>
   <body>
-    <!-- Define boilerplate document. -->
     <section id="container">
-      <my-button></my-button>
-      <my-button class="themed"></my-button>
-      <my-button>
-        <style slot="styles">
-          button {
-            color: gold;
-          }
-        </style>
-      </my-button>
-      <my-button>
-        <div slot="content">
-          <input type="button" value="This is an input-type button" />
-        </div>
-      </my-button>
-      <my-button>
-        <span slot="inner">This is some custom text content</span>
-      </my-button>
+      <!-- Button-related tests. -->
+      <div>
+        <my-button></my-button>
+        <my-button class="themed"></my-button>
+        <my-button>
+          <style slot="styles">
+button {
+  color: gold;
+}
+          </style>
+        </my-button>
+        <my-button>
+          <div slot="content">
+            <input type="button" value="This is an input-type button" />
+          </div>
+        </my-button>
+        <my-button>
+          <span slot="inner">This is some custom text content</span>
+        </my-button>
 
-      <!-- 'Vanilla' HTML button elements. -->
-      <button>This is a 'Vanilla' HTML button</button>
-      <input type="button" value="This is a 'Vanilla' HTML input-type button" />
+        <!-- 'Vanilla' HTML button elements. -->
+        <button>This is a 'Vanilla' HTML button</button>
+        <input type="button" value="This is a 'Vanilla' HTML input-type button" />
+      </div>
+
     </section>
 
     <!-- Import UI components. -->
