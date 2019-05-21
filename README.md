@@ -5,6 +5,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Findings](#findings)
 - [Documentation](#documentation)
 
 ## About
@@ -47,6 +48,16 @@ These experiments explore the following:
 - Web Components and child notes (specifically Element and Text-type nodes).
 
 For additional details, see the [About](#about) section above.
+
+## Findings
+
+- Styles defined outside of a given Web Component are not applied to elements within the component's template, even if the selector for a given rule matches an element within the Web Component.
+- Styles defined outside of a given Web Component ARE applied to transcluded elements (ie. elements inserted into a given Web Component using the 'slot' API), providing that they match the selector.
+- Styles defined within a given Web Component are applied to the contents of that component, providing that:
+  - The contents match the selector.
+  - The contents were not inserted using transclusion (ie. the 'slot' API).
+- Styles defined within a given Web Component are not applied to existing elements outside of the component.
+- In the case where a <style> tag is inserted via the 'slot' API, rules and declarations ARE NOT applied to the contents of the Web Component, even if the selector for a given rule matches an element within the Web Component.
 
 ## Documentation
 Currently, this project does not include any external documentation.
