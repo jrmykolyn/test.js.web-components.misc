@@ -16,6 +16,10 @@ The purpose of this repository is to explore the following:
 - Encapsulation
   - How can a Web Component make use of the Shadow DOM for encapsulation?
   - How can a Web Component opt-out of the Shadow DOM?
+- Child Nodes
+  - How do Web Components capture/expose child nodes?
+  - How do Web Components handle Element-type nodes?
+  - How do Web Components handle Text-type nodes?
 
 ## Prerequisites
 In order to run this project, please ensure that both Node and npm are installed on your system.
@@ -36,6 +40,13 @@ These experiments relate to styling Web Components. For additional details, see 
 
 ### Link
 These experiments relate to Web Components and encapsulation. For additional details, see the [About](#about) section above.
+
+### Paragraph
+These experiments explore the following:
+- Web Components and encapsulation.
+- Web Components and child notes (specifically Element and Text-type nodes).
+
+For additional details, see the [About](#about) section above.
 
 ## Documentation
 Currently, this project does not include any external documentation.
