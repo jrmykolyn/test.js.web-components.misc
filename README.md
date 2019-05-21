@@ -1,4 +1,4 @@
-# Test - JS - Web Components - Styles
+# Test - JS - Web Components - Misc.
 
 ## Table of Contents
 - [About](#about)
