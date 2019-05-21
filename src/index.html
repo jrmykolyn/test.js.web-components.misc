@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test - JS - Web Components - Styles</title>
+  </head>
+  <body>
+    <section id="container">
+      <!-- Button-related tests. -->
+      <div>
+        <!--
+          1. Default MyButton component tag.
+
+          Example does not include slot content or supplementary attributes.
+        -->
+        <my-button></my-button>
+
+        <!--
+          2. MyButton component with supplementary class.
+
+          Example includes a `class` attribute with a value of 'themed'.
+          Since the component styles include a `:host()` pseudo-selector,
+          the presence of the 'themed' class name results in the application
+          of additional styles.
+        -->
+        <my-button class="themed"></my-button>
+
+        <!--
+          3. MyButton component with 'styles' slot content.
+
+          Example makes use of the 'styles' slot to inject a <style> tag
+          directly into the MyButton component. Since the MyButton
+          component's text content is encapsulated, it is unaffected by
+          the <style> tag.
+
+          However, since the <style> tag is defined outside of the component,
+          other instances of the <button> tag are affected.
+        -->
+        <my-button>
+          <style slot="styles">
+button {
+  color: gold;
+}
+          </style>
+        </my-button>
+
+        <!--
+          4. MyButton component with 'content' slot content.
+
+          Example makes use of the 'content' slot to inject an <input />
+          element directly into the MyButton component. Due to the
+          structure of the MyButton component, both the <button> tag
+          and its text content are replaced.
+        -->
+        <my-button>
+          <div slot="content">
+            <input type="button" value="This is an input-type button" />
+          </div>
+        </my-button>
+
+        <!--
+          5. MyButton component with 'inner' slot content.
+
+          Examples makes use of the 'inner' slot to inject custom text
+          content directly into the MyButton component. Due to the
+          structure of the MyButton component, the <button> tag is
+          preserved and the default text is replaced.
+        -->
+        <my-button>
+          <span slot="inner">This is some custom text content</span>
+        </my-button>
+
+        <!-- 'Vanilla' HTML button elements. -->
+        <button>This is a 'Vanilla' HTML button</button>
+        <input type="button" value="This is a 'Vanilla' HTML input-type button" />
+      </div>
+
+    </section>
+
+    <!-- Import UI components. -->
+    <script src="js/components/button.js"></script>
+
+    <!-- Import application entry point. -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
