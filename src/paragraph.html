@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test - JS - Web Components - Styles</title>
+  </head>
+  <body>
+    <section id="container">
+      <!-- Paragraph-related tests. -->
+      <div>
+        <!--
+          Setup. Define page-wide <p> styles.
+        -->
+        <style>
+p {
+  background: blue;
+  color: white;
+}
+        </style>
+
+        <!--
+          1. 'Encapsulated' MyParagraph component with default slot content.
+
+          In this case, the component should display the 'Hello, world!'
+          text within a <p> tag. Additionally, the colour and background
+          colour of this text should be unaffected by the <style> tag
+          included above.
+        -->
+        <my-paragraph encapsulated="true">Hello, world!</my-paragraph>
+
+        <!--
+          2. 'Exposed' MyParagraph component with default slot content.
+
+          In this case, the component should also display the 'Hello, world!'
+          text within a <p> tag. However, since the component is not
+          encapsulated, the text is affected by the <style> tag included
+          above.
+        -->
+        <my-paragraph>Hello, world!</my-paragraph>
+
+        <!--
+          3. 'Encapsulated' MyParagraph component with multiple child nodes.
+
+          In this case, the component should display each of the child nodes
+          within the default slot. Since the slot content contains several
+          <p> tags that are defined outside of the Web Component, the
+          the rules defined within the <style> tag above are applied.
+        -->
+        <my-paragraph encapsulated="true">
+          <p>First child</p>
+          <div>
+            <p>Second child</p>
+          </div>
+          Third child
+        </my-paragraph>
+
+        <!--
+          4. 'Exposed' MyParagraph component with multiple child nodes.
+
+          In this case, the component should also display each of the child
+          nodes within the default slot. Since the component is not
+          encapsulated, the slot content is affected by the <style> tag
+          defined above.
+        -->
+        <my-paragraph>
+          <p>First child</p>
+          <div>
+            <p>Second child</p>
+          </div>
+          Third child
+        </my-paragraph>
+      </div>
+    </section>
+
+    <!-- Import UI components. -->
+    <script src="js/components/paragraph.js"></script>
+
+    <!-- Import application entry point. -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
