@@ -2,18 +2,21 @@
 <html>
   <head>
     <title>Test - JS - Web Components - Misc. - Styles</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <section id="container">
       <!-- Button-related tests. -->
-      <div>
+      <div class="node">
         <!--
           1. Default MyButton component tag.
 
           Example does not include slot content or supplementary attributes.
         -->
         <my-button></my-button>
+      </div>
 
+      <div class="node">
         <!--
           2. MyButton component with supplementary class.
 
@@ -23,7 +26,9 @@
           of additional styles.
         -->
         <my-button class="themed"></my-button>
+      </div>
 
+      <div class="node">
         <!--
           3. MyButton component with 'styles' slot content.
 
@@ -42,7 +47,9 @@ button {
 }
           </style>
         </my-button>
+      </div>
 
+      <div class="node">
         <!--
           4. MyButton component with 'content' slot content.
 
@@ -56,7 +63,9 @@ button {
             <input type="button" value="This is an input-type button" />
           </div>
         </my-button>
+      </div>
 
+      <div class="node">
         <!--
           5. MyButton component with 'inner' slot content.
 
@@ -68,9 +77,14 @@ button {
         <my-button>
           <span slot="inner">This is some custom text content</span>
         </my-button>
+      </div>
 
-        <!-- 'Vanilla' HTML button elements. -->
+      <!-- 'Vanilla' HTML button elements. -->
+      <div class="node">
         <button>This is a 'Vanilla' HTML button</button>
+      </div>
+
+      <div class="node">
         <input type="button" value="This is a 'Vanilla' HTML input-type button" />
       </div>
     </section>

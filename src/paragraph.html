@@ -2,21 +2,23 @@
 <html>
   <head>
     <title>Test - JS - Web Components - Styles</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <section id="container">
       <!-- Paragraph-related tests. -->
-      <div>
-        <!--
-          Setup. Define page-wide <p> styles.
-        -->
-        <style>
-p {
-  background: blue;
-  color: white;
-}
-        </style>
 
+      <!--
+        Setup. Define page-wide <p> styles.
+      -->
+      <style>
+        p {
+          background: blue;
+          color: white;
+        }
+      </style>
+
+      <div class="node">
         <!--
           1. 'Encapsulated' MyParagraph component with default slot content.
 
@@ -26,7 +28,9 @@ p {
           included above.
         -->
         <my-paragraph encapsulated="true">Hello, world!</my-paragraph>
+      </div>
 
+      <div class="node">
         <!--
           2. 'Exposed' MyParagraph component with default slot content.
 
@@ -36,7 +40,9 @@ p {
           above.
         -->
         <my-paragraph>Hello, world!</my-paragraph>
+      </div>
 
+      <div class="node">
         <!--
           3. 'Encapsulated' MyParagraph component with multiple child nodes.
 
@@ -52,7 +58,9 @@ p {
           </div>
           Third child
         </my-paragraph>
+      </div>
 
+      <div class="node">
         <!--
           4. 'Exposed' MyParagraph component with multiple child nodes.
 

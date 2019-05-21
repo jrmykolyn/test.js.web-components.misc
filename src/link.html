@@ -2,28 +2,35 @@
 <html>
   <head>
     <title>Test - JS - Web Components - Misc. - Encapsulation</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <section id="container">
       <!-- Link-related tests. -->
-      <div>
+      <div class="node">
         <!--
           1. Default MyLink component.
         -->
         <my-link></my-link>
+      </div>
 
+      <div class="node">
         <!--
           2. MyLink component with default slot content.
         -->
         <my-link>
           This is some custom text content
         </my-link>
+      </div>
 
+      <div class="node">
         <!--
           3. Default MyCustomLink component.
         -->
         <my-custom-link></my-custom-link>
+      </div>
 
+      <div class="node">
         <!--
           4. MyCustomLink component with default slot content.
         -->
