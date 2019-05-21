@@ -74,10 +74,37 @@ button {
         <input type="button" value="This is a 'Vanilla' HTML input-type button" />
       </div>
 
+      <!-- Link-related tests. -->
+      <div>
+        <!--
+          1. Default MyLink component.
+        -->
+        <my-link></my-link>
+
+        <!--
+          2. MyLink component with default slot content.
+        -->
+        <my-link>
+          This is some custom text content
+        </my-link>
+
+        <!--
+          3. Default MyCustomLink component.
+        -->
+        <my-custom-link></my-custom-link>
+
+        <!--
+          4. MyCustomLink component with default slot content.
+        -->
+        <my-custom-link>
+          This is also some custom text content
+        </my-custom-link>
+      </div>
     </section>
 
     <!-- Import UI components. -->
     <script src="js/components/button.js"></script>
+    <script src="js/components/link.js"></script>
 
     <!-- Import application entry point. -->
     <script src="js/main.js"></script>
